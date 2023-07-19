@@ -13,15 +13,13 @@ async function newTicket(req, res) {
 }
 
 async function create(req, res) {
-console.log(req.body);
   try {
     const newTicket = await Ticket.create(req.body);
     console.log("Look here", newTicket)
 ;  } catch (err) {
     console.log(err);
   }
-  res.redirect('/tickets/new');
-}
+    res.redirect("/flights");}
 
 async function addToTicket(req, res) {
   const flight = await Flight.findById(req.params.id);
