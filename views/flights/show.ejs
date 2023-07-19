@@ -12,7 +12,7 @@
   <div>Ticket:</div>
   <ul>
     <%- flight.ticket.map(ticket => 
-    `<li>${ticket.seat} <small>${ticket.price} </li>small> <small>${ticket.flight}</small></li>` 
+    `<li>${ticket.seat} <small>${ticket.price} </li> <small>${ticket.flightNo}</small></li>` 
     ) %>
   </ul>
 </section>
@@ -21,7 +21,7 @@
   <select name="ticketId">
     <!-- Emit an option for each performer -->
     <%- tickets.map(t => 
-      `<option value="${t._id}">${t.seat}</option>`
+      `<option value="${t._id}">${t.seat} $${t.price} ${t.flightNo}</option> `
     ) %>
   </select>
   <button type="submit">Add to Tickets</button>
@@ -53,8 +53,6 @@
           <tr>
             <td><%= d.airport %></td>
             <td><%= d.createdAt.toLocaleDateString() %></td>
-            <!-- <td><%= d.content %></td> -->
-            <!-- <td><%= d.arrival %></td> -->
           </tr>
         <% }); %>
       </tbody>

@@ -1,0 +1,19 @@
+<%- include('../partials/header') %>
+
+<section id="badge-container">
+  <% tickets.forEach(function(t) { %>
+    <article class="badge"><%= t.seat %></article>
+  <% }) %>
+</section>
+
+<form id="add-ticket-form" action="/tickets" method="POST">
+  <label>Seat:</label>
+  <input type="String" name="seat">
+  <label>Price:</label>
+  <input type="Number" name="price">
+  <label>Flight #:</label>
+  <input type="Number" name="flightNo">
+  <input type="submit" value="Add Ticket">
+</form>
+
+<%- include('../partials/footer') %>
